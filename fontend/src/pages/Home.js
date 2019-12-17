@@ -1,20 +1,28 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import {
-    Container,
-    Button,
-    Modal,
-    ModalHeader,
-    ModalBody,
-    ModalFooter
+    Container
 } from 'reactstrap'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import './Home.scss'
+import axios from 'axios'
 
 const Home = () => {
 
-    const [modal, setModal] = useState(false);
-    const toggle = () => setModal(!modal);
+    const [info, setInfo] = useState({})
+    const [modal, setModal] = useState(false)
+    const [reservation, setReservation] = useState([])
+
+    useEffect(() => {
+        axios.get('http://localhost:8000/api/reservations/')
+            .then(res => setReservation(res.data))
+    })
+
+    const member = reservation.map((re) => {
+        return {['title']: re.name, ['date']: re.time}
+    })
+
+    const info_events = member
 
     return (
         <Fragment>
@@ -22,23 +30,12 @@ const Home = () => {
                 <FullCalendar
                     defaultView="dayGridMonth"
                     plugins={[dayGridPlugin]}
-                    events={[
-                        { title: 'ห้องประชุมใหญ่ 1', date: '2019-12-01' },
-                        { title: 'ห้องประชุมใหญ่ 1', date: '2019-12-02' }
-                    ]}
-                    eventClick={toggle}
+                    events={info_events}
+                    eventClick={(info) => {
+                        setModal(!modal)
+                        setInfo(info.event)
+                    }}
                 />
-                <Modal 
-                    isOpen={modal}  
-                    >
-                    <ModalHeader toggle={toggle}>Modal title</ModalHeader>
-                    <ModalBody>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </ModalBody>
-                    <ModalFooter>
-                        <Button color="secondary" onClick={toggle}>Cancel</Button>
-                    </ModalFooter>
-                </Modal>
             </Container>
         </Fragment>
     )

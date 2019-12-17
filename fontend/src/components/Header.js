@@ -13,7 +13,7 @@ const Header = () => {
 
     const [isOpen, setIsOpen] = useState(false);
 
-    const toggle = () => setIsOpen(!isOpen);
+    const toggle = () => setIsOpen(!isOpen)
 
     return (
         <Navbar color="dark" dark expand="md">
@@ -31,13 +31,16 @@ const Header = () => {
                         <NavLink href="/Reservations">จองห้องประชุม</NavLink>
                     </NavItem>
                     <NavItem>
+                        <NavLink href="/account">บัญชีผู้ใช้</NavLink>
+                    </NavItem>
+                    <NavItem>
                         <NavLink href="/login">เข้าสู่ระบบ</NavLink>
                     </NavItem><NavItem>
                         <NavLink href="/register">สมัครสมาชิก</NavLink>
                     </NavItem>
                 </Nav>
             </Collapse>
-        </Navbar>
+        </Navbar >
     )
 }
 

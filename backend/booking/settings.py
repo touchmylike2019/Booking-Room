@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'book',
     'knox',
-    'accounts'
+    'accounts',
+    'reservations'
 ]
 
 REST_FRAMEWORK = {

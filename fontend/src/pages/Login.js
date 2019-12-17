@@ -1,5 +1,6 @@
-import React from 'react';
-import { Link, Redirect } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { Link, Redirect } from "react-router-dom"
+import axios from 'axios'
 import {
     Container,
     Card, CardBody,
@@ -7,7 +8,39 @@ import {
     Form, FormGroup, Label, Input
 } from 'reactstrap';
 
-const Login = (props) => {
+const Login = ({isUser, isEmail, isLogin}) => {
+
+    let el_username, el_password
+    const [isAuthenticated, setIsAuthenticated] = useState(false)
+
+    const handleLogin = (e) => {
+        e.preventDefault()
+        const username = el_username.value
+        const password = el_password.value
+        // Headers
+        const config = {
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      
+        // Request Body
+        const body = JSON.stringify({ username, password })
+      
+        axios
+          .post("http://localhost:8000/api/auth/login", body, config)
+          .then(res => {
+                localStorage.setItem('user', res.data.user.username)
+                localStorage.setItem('email', res.data.user.email)
+                localStorage.setItem('authentication', true)
+                setIsAuthenticated(!isAuthenticated)
+            })
+          .catch(() => alert("Invalid username or password."))
+      }
+
+      if(isAuthenticated) 
+        return <Redirect to="/" />
+
     return (
         <Container className="mt-5">
             <Card>
@@ -19,6 +52,7 @@ const Login = (props) => {
                             <Input
                                 type="text"
                                 name="username"
+                                innerRef={el => el_username = el}
                             />
                         </FormGroup>
 
@@ -27,11 +61,12 @@ const Login = (props) => {
                             <Input
                                 type="password"
                                 name="password"
+                                innerRef={el => el_password = el}
                             />
                         </FormGroup>
 
                         <FormGroup>
-                            <Button type="submit">
+                            <Button type="submit" onClick={handleLogin}>
                                 Login
                             </Button>
                         </FormGroup>
