@@ -30,8 +30,8 @@ https://github.com/touchmylike2019/Booking-Room/blob/master/README.md
 -(https://l.facebook.com/l.php?u=https%3A%2F%2Fxd.adobe.com%2Fview%2F14e3453f-68d9-4a83-4a83-c2db982e3c18-62d2%2F%3Ffbclid%3DIwAR1dQZvCFJpCJTu1E4l2EQ3-LcQULgBhAwde7pPZoK6Bm47Or1QeocBpsw4&h=AT1Ks7DgRBI_gOvxUFfSZYu7m78TIxzhFC6HCUdvFqBOOz5G3YkYOaiKI47HhaKxfyOhoPnCCdm6_aYY6t8QS2yOgbTw7aSfjZ-60ZevbvBUd2hP1d7nHyipVl3llGyhcn_9WQ)
 
 # Author
-| Profile | รหัสนักศึกษา        | ชื่อ - นามสกุล | Position | Github
-|:---------:| :-------------: |:---------------------:| :-------------: |
+| Profile | รหัสนักศึกษา        | ชื่อ - นามสกุล | Position | Github |
+|:---------:| :-------------: |:---------------------:| :-------------: | :------------: |
 | <a><img src="./images/260.png" width="200px"></a> | 61070260    | นางสาว อรณิช คีรีพิทักษ์| Content && Design | 
 <a><img src="./images/263.jfif" width="200px"></a> | 61070263    | นายอัครพล กันพงษ์| Full Stack |
 
