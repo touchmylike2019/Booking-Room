@@ -32,8 +32,8 @@ https://github.com/touchmylike2019/Booking-Room/blob/master/README.md
 # Author
 | Profile | รหัสนักศึกษา        | ชื่อ - นามสกุล | Position |
 |:---------:| :-------------: |:---------------------:| :-------------: |
-| <a><img src="./images/260.png" width="200px"></a> | 61070260    | นางสาว อรณิช คีรีพิทักษ์| Content && Design |
-<a><img src="./images/263.jfif" width="200px"></a> | 61070263    | นายอัครพล กันพงษ์| Full Stack
+| <a><img src="./images/260.png" width="200px"></a> | 61070260    | นางสาว อรณิช คีรีพิทักษ์| Content && Design | https://github.com/Tearrockster
+<a><img src="./images/263.jfif" width="200px"></a> | 61070263    | นายอัครพล กันพงษ์| Full Stack | https://github.com/touchmylike2019
 
 # Video 
 https://www.youtube.com/watch?v=b-OOKXB60Is
