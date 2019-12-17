@@ -1,3 +1,11 @@
 {
-    "python.pythonPath": "C:\\Users\\touch\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe"
+    "python.pythonPath": "C:\\Users\\touch\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintArgs": [
+        "--load-plugins",
+        "pylint_django"
+    ],
+    "python.linting.flake8Enabled": false,
+    "python.formatting.provider": "yapf"
 }

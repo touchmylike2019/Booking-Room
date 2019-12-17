@@ -7,10 +7,6 @@ import {
     Nav,
     NavItem,
     NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
 } from 'reactstrap'
 
 const Header = () => {
@@ -31,23 +27,11 @@ const Header = () => {
                     <NavItem>
                         <NavLink href="/list">รายการห้องประชุม</NavLink>
                     </NavItem>
-                    <UncontrolledDropdown nav inNavbar>
-                        <DropdownToggle nav caret>
-                            เข้าสู่ระบบ
-              </DropdownToggle>
-                        <DropdownMenu right>
-                            <DropdownItem>
-                                Option 1
-                </DropdownItem>
-                            <DropdownItem>
-                                Option 2
-                </DropdownItem>
-                            <DropdownItem divider />
-                            <DropdownItem>
-                                Reset
-                </DropdownItem>
-                        </DropdownMenu>
-                    </UncontrolledDropdown>
+                    <NavItem>
+                        <NavLink href="/login">เข้าสู่ระบบ</NavLink>
+                    </NavItem><NavItem>
+                        <NavLink href="/register">สมัครสมาชิก</NavLink>
+                    </NavItem>
                 </Nav>
             </Collapse>
         </Navbar>
