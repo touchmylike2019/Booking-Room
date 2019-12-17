@@ -1,31 +1,39 @@
 import React from 'react';
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom"
+import axios from 'axios'
 import {
     Container,
     Card, CardBody,
     CardTitle, Button,
     Form, FormGroup, Label, Input
 } from 'reactstrap';
-import axios from 'axios'
 
 const Register = (props) => {
 
-    let el_username, el_password, el_email, el_repassword
+    let el_username, el_password, el_email
 
     const handleSubmit = e => {
         e.preventDefault()
-        const headers = {
-            'Content-Type': 'application/json'
-        }
-        const name = el_username.value
+        const username = el_username.value
         const email = el_email.value
         const password = el_password.value
-        const re_password = el_repassword.value
-        if (password === re_password) {
-            const data = JSON.stringify({ name, email, password})
-            axios.post('http://localhost:8000/api/reservations/', data, headers)
-                .then(res => <Redirect to="/" />)
+        // Headers
+        const config = {
+          headers: {
+            "Accept" : "application/json",
+            "Content-Type": "application/json"
+          }
         }
+      
+        // Request Body
+        const body = JSON.stringify({ username, email, password })
+        axios
+            .post("http://localhost:8000/api/auth/register", {
+                "username": "user101",
+                "email":"user101@gmail.com",
+                "password": "123456"
+            }, config)
+            .then(res => console.log(res.data))
     }
 
     return (
@@ -66,7 +74,6 @@ const Register = (props) => {
                             <Input
                                 type="password"
                                 name="password"
-                                innerRef={el => el_repassword = el}
                             />
                         </FormGroup>
 

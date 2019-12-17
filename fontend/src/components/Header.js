@@ -35,9 +35,10 @@ const Header = () => {
                     </NavItem>
                     <NavItem>
                         <NavLink href="/login">เข้าสู่ระบบ</NavLink>
-                    </NavItem><NavItem>
-                        <NavLink href="/register">สมัครสมาชิก</NavLink>
                     </NavItem>
+                    {/* <NavItem>
+                        <NavLink href="/register">สมัครสมาชิก</NavLink>
+                    </NavItem> */}
                 </Nav>
             </Collapse>
         </Navbar >

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, Redirect } from "react-router-dom"
 import axios from 'axios'
 import {
@@ -8,7 +8,7 @@ import {
     Form, FormGroup, Label, Input
 } from 'reactstrap';
 
-const Login = ({isUser, isEmail, isLogin}) => {
+const Login = () => {
 
     let el_username, el_password
     const [isAuthenticated, setIsAuthenticated] = useState(false)

@@ -9,7 +9,6 @@ import axios from 'axios'
 
 const Home = () => {
 
-    const [info, setInfo] = useState({})
     const [modal, setModal] = useState(false)
     const [reservation, setReservation] = useState([])
 
@@ -19,7 +18,7 @@ const Home = () => {
     })
 
     const member = reservation.map((re) => {
-        return {['title']: re.name, ['date']: re.time}
+        return re.status === false ? {} : {['title']: re.name, ['date']: re.time}
     })
 
     const info_events = member
@@ -31,10 +30,6 @@ const Home = () => {
                     defaultView="dayGridMonth"
                     plugins={[dayGridPlugin]}
                     events={info_events}
-                    eventClick={(info) => {
-                        setModal(!modal)
-                        setInfo(info.event)
-                    }}
                 />
             </Container>
         </Fragment>
