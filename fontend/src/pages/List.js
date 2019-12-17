@@ -3,16 +3,15 @@ import {
     Container,
     Table
 } from 'reactstrap'
+import axios from 'axios' 
 
 const List = () => {
 
     const [info, setInfo] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:8000/api/book/')
-            .then(res => res.json())
-            .then(result => setInfo(result))
-        // console.log(info)
+        axios.get('http://localhost:8000/api/book/')
+            .then(res => setInfo(res.data))
     }, [])
 
     const member = info.map((field, index) => (
@@ -21,7 +20,7 @@ const List = () => {
             <td>{field.size}</td>
             <td>{field.amount}</td>
             <td>{field.description}</td>
-            {field.status == false ? <td style={{color: "green"}}>ใช้งานได้</td> : <td style={{color: "red"}}>จองเเล้ว</td>}
+            {field.status === false ? <td style={{color: "green"}}>ใช้งานได้</td> : <td style={{color: "red"}}>จองเเล้ว</td>}
         </tr>
     ))
 

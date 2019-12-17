@@ -28,6 +28,9 @@ const Header = () => {
                         <NavLink href="/list">รายการห้องประชุม</NavLink>
                     </NavItem>
                     <NavItem>
+                        <NavLink href="/Reservations">จองห้องประชุม</NavLink>
+                    </NavItem>
+                    <NavItem>
                         <NavLink href="/login">เข้าสู่ระบบ</NavLink>
                     </NavItem><NavItem>
                         <NavLink href="/register">สมัครสมาชิก</NavLink>

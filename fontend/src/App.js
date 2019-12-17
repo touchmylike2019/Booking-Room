@@ -5,6 +5,7 @@ import List from './pages/List'
 import Header from './components/Header'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Reservations from './pages/Reservations'
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/list" component={List} exact />
                 <Route path="/login" component={Login} exact />
                 <Route path="/register" component={Register} exact />
+                <Route path="/reservations" component={Reservations} exact />
             </Switch>
         </BrowserRouter>
     )
